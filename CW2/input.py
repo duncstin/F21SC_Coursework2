@@ -21,6 +21,10 @@ def process_line(line):
 
 
 print("\nExtracted relevant info")
-data = input_file("issuu_sample.json")
+data = input_file("issuu_cw2.json")
 for d in data:
     print(d)
+
+table = pd.DataFrame.from_dict(data)
+print(table)
+
