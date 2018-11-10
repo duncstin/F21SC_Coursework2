@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
+
 cntry_to_cont = {
   'AF': 'AS',
   'AX': 'EU',
