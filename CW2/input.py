@@ -2,6 +2,7 @@ import json
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
 cntry_to_cont = {
   'AF': 'AS',
   'AX': 'EU',
@@ -254,6 +255,8 @@ cntry_to_cont = {
   'ZW': 'AF'
 }
 
+
+
 continents = {
   'AF': 0,
   'AS': 0,
@@ -284,16 +287,18 @@ def process_line(line):
 
 print("\nExtracted relevant info")
 data = input_file("issuu_cw2.json")
-#for d in data:
-#    print(d)
+
 
 table = pd.DataFrame.from_dict(data)
 table.rename(columns={'env_doc_id': 'doc_id', 'visitor_uuid': 'user_id', 'visitor_country': 'country', 'visitor_useragent': 'browser' }, inplace=True)
 
 print(table[:10])
-print(continents)
+
 
 x = table['country'].value_counts()
+print(x)
+
+# change to get frequency count of countries, then iterate over frequency counts adding those to continent
 
 country_iterator = table['country'].__iter__()
 
@@ -325,4 +330,6 @@ def show_histo(dict, orient="horiz", label="counts", title="title"):
     plt.title(title)
     plt.show()
 
-show_histo(continents)
+show_histo(continents, 'vert', 'Continents', 'Views by continent')
+
+print('test')
