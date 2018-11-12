@@ -9,9 +9,12 @@ class UserInput:
     doc_id = ''
     task = ''
     file = ''
+    gui_flag = False
 
     def __init__(self):
         self.get_input()
+        if self.gui_flag == False:
+            self.validate_task_requirements()
 
     def get_input(self):
         """Gets user input from commandline"""
@@ -19,12 +22,12 @@ class UserInput:
         argv = sys.argv[1:]
         try:
             options, remainder = getopt.getopt(argv, 'hu:d:t:f:', ['help'])
-            print(len(options), len(remainder))
+            # print(len(options), len(remainder))
         except getopt.GetoptError:
             UserInput.usage(self)
 
         if len(options) == 0 and len(remainder) == 0:
-            print('This would call a GUI')
+            self.gui_flag = True
         elif len(remainder) > 0:
             UserInput.usage(self)
         else:
@@ -45,7 +48,7 @@ class UserInput:
 
     def usage(self, fullexplain=False):
         """Prints message about usage. If called with 'True', will print expanded usage info"""
-        message = '\nUsage: userinput.py -u <user_uuid> -d <doc_id> -t <task> -f <filename>\n'
+        message = '\nUsage: user_input.py -u <user_uuid> -d <doc_id> -t <task> -f <filename>\n'
         expanded = """    <user_uuid>: a 16 character hash representing a unique user
         
         <doc_id>: a unique hash representing a document that that can be read by users
@@ -63,5 +66,17 @@ class UserInput:
         if fullexplain:
             print(expanded)
         sys.exit(0)
+
+    def validate_task_requirements(self):
+        print("Task Id:" + self.task)
+        if self.task in ('2a', '2b', '3a', '3b'):
+            if len(self.doc_id) != 45:
+                print("Expected doc_id string of size 45 for task %s" % self.task)
+                sys.exit(1)
+        elif self.task in ('4d', '5'):
+            print('Validation still required')
+        else:
+            print('Invalid task specified')
+            UserInput.usage(self, True)
 
 
