@@ -256,7 +256,6 @@ cntry_to_cont = {
 }
 
 
-
 continents = {
   'AF': 0,
   'AS': 0,
@@ -267,12 +266,17 @@ continents = {
   'AN': 0
 }
 
+
 def input_file(filename):
     data = []
     with open(filename) as f:
         for line in f:
+            print(f)
             current_line = process_line(json.loads(line))
-            data.append(current_line)
+            if current_line:
+                data.append(current_line)
+    print("printing data")
+    print(data)
     return data
 
 
@@ -280,23 +284,24 @@ def process_line(line):
     desired_fields = ["visitor_uuid", "visitor_country", "visitor_useragent", "env_doc_id"]
     d = {}
     for field in desired_fields:
-        if field in line:
+        if field in line and line["event_type"] == "read":
             d[field] = line[field]
     return d
 
 
 print("\nExtracted relevant info")
-data = input_file("issuu_cw2.json")
+data = input_file("issuu_sample.json")
 
 
-table = pd.DataFrame.from_dict(data)
+table = pd.DataFrame(data)
 table.rename(columns={'env_doc_id': 'doc_id', 'visitor_uuid': 'user_id', 'visitor_country': 'country', 'visitor_useragent': 'browser' }, inplace=True)
 
 print(table[:10])
 
 
-x = table['country'].value_counts()
+x = table['doc_id'].value_counts()
 print(x)
+
 
 # change to get frequency count of countries, then iterate over frequency counts adding those to continent
 
@@ -332,4 +337,4 @@ def show_histo(dict, orient="horiz", label="counts", title="title"):
 
 show_histo(continents, 'vert', 'Continents', 'Views by continent')
 
-print('test')
+# print(table.loc[table[country]] == '140211154215-0f1d8b14a65ebfbc5f0a9ec478d47119')
