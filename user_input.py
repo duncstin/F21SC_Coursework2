@@ -72,7 +72,7 @@ class UserInput:
         if self.task in ('2a', '2b', '3a', '3b'):
             if len(self.doc_id) != 45:
                 print("Expected doc_id string of size 45 for task %s" % self.task)
-                sys.exit(1)
+                # sys.exit(1)
         elif self.task in ('4d', '5'):
             print('Validation still required')
         else:

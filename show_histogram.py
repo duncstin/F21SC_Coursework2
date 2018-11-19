@@ -1,7 +1,5 @@
-import json
 import pandas as pd
 import matplotlib.pyplot as plt
-
 
 cntry_to_cont = {
   'AF': 'AS',
@@ -255,7 +253,6 @@ cntry_to_cont = {
   'ZW': 'AF'
 }
 
-
 continents = {
   'AF': 0,
   'AS': 0,
@@ -267,74 +264,41 @@ continents = {
 }
 
 
-def input_file(filename):
-    data = []
-    with open(filename) as f:
-        for line in f:
-            print(f)
-            current_line = process_line(json.loads(line))
-            if current_line:
-                data.append(current_line)
-    print("printing data")
-    print(data)
-    return data
+class ShowHistogram:
+    def __init__(self, df):
+        self.df = df
+
+    def show_from_table(self, column_name, doc_id=None):
+        if doc_id is not None:
+            # print(self.df.loc[self.df[column_name]] == doc_id)
+            print("This would show table filtered by: " + column_name + doc_id)
+            tempDf =(self.df[['doc_id', column_name]])
+            temp2 = (tempDf[tempDf.doc_id == doc_id])
+            x = temp2[column_name].value_counts()
+            #print(x)
+            self.show_histo(x.to_dict(), orient="vert", label="counts", title="Views by " + column_name + " for " + doc_id[-4:] )
+        else:
+          x = self.df[column_name].value_counts()
+          print(x)
+          self.show_histo(x.to_dict(), orient="vert", label="counts", title="Views by " + column_name)
 
 
-def process_line(line):
-    desired_fields = ["visitor_uuid", "visitor_country", "visitor_useragent", "env_doc_id"]
-    d = {}
-    for field in desired_fields:
-        if field in line and line["event_type"] == "read":
-            d[field] = line[field]
-    return d
+    def show_histo(self, dict, orient="horiz", label="counts", title="title"):
+        """Take a dictionary of counts and show it as a histogram."""
+        if orient == "horiz":
+            bar_fun = plt.barh  # NB: this assigns a function to bar_fun!
+            bar_ticks = plt.yticks
+            bar_label = plt.xlabel
+        elif orient == "vert":
+            bar_fun = plt.bar
+            bar_ticks = plt.xticks
+            bar_label = plt.ylabel
+        else:
+            raise Exception("show_histo: Unknown orientation: %s ".format % orient)
 
-
-print("\nExtracted relevant info")
-data = input_file("issuu_sample.json")
-
-
-table = pd.DataFrame(data)
-table.rename(columns={'env_doc_id': 'doc_id', 'visitor_uuid': 'user_id', 'visitor_country': 'country', 'visitor_useragent': 'browser' }, inplace=True)
-
-print(table[:10])
-
-
-x = table['doc_id'].value_counts()
-print(x)
-
-
-# change to get frequency count of countries, then iterate over frequency counts adding those to continent
-
-country_iterator = table['country'].__iter__()
-
-for country in country_iterator:
-    if country in cntry_to_cont:
-        continents[cntry_to_cont[country]] += 1
-
-print(continents)
-
-
-
-def show_histo(dict, orient="horiz", label="counts", title="title"):
-    """Take a dictionary of counts and show it as a histogram."""
-    if orient == "horiz":
-        bar_fun = plt.barh  # NB: this assigns a function to bar_fun!
-        bar_ticks = plt.yticks
-        bar_label = plt.xlabel
-    elif orient == "vert":
-        bar_fun = plt.bar
-        bar_ticks = plt.xticks
-        bar_label = plt.ylabel
-    else:
-        raise Exception("show_histo: Unknown orientation: %s ".format % orient)
-
-    n = len(dict)
-    bar_fun(range(n), list(dict.values()), align='center', alpha=0.4)
-    bar_ticks(range(n), list(dict.keys()))  # NB: uses a higher-order function
-    bar_label(label)
-    plt.title(title)
-    plt.show()
-
-show_histo(continents, 'vert', 'Continents', 'Views by continent')
-
-# print(table.loc[table[country]] == '140211154215-0f1d8b14a65ebfbc5f0a9ec478d47119')
+        n = len(dict)
+        bar_fun(range(n), list(dict.values()), align='center', alpha=0.4)
+        bar_ticks(range(n), list(dict.keys()))  # NB: uses a higher-order function
+        bar_label(label)
+        plt.title(title)
+        plt.show()
