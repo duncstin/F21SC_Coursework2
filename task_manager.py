@@ -1,16 +1,31 @@
-import user_input
-from show_histogram import ShowHistogram
-
+from HistoTasks import HistoTasks
+from ShowHistogram import ShowHistogram
 
 class TaskManager:
-    def __init__(self, u_input: user_input, dataframe):
-        self.u_input = u_input
-        self.dataset = dataframe
 
+    file = ''
+    doc = ''
+    user = ''
 
-    def run(self):
-        show_histo = ShowHistogram(self.dataset)
-        if self.u_input.task == '2a':
-            show_histo.show_from_table('country', self.u_input.doc_id)
-        if self.u_input.task == '3a':
-            show_histo.show_from_table('browser', self.u_input.doc_id)
+    def __init__(self, u_input):
+        self.file = u_input.get_file()
+        self.doc = u_input.get_docid()
+        self.user = u_input.get_userid()
+
+    def run(self, task):
+        if task[0] == '2':
+            t2 = HistoTasks(self.file)
+            histo = ShowHistogram()
+            countries = t2.get_from_file("visitor_country", self.doc)
+            if task[1] == 'a':
+                histo.show_histo(countries, "vert", "Country Code", "Views by country")
+            else:
+                continents = t2.get_continents(countries)
+                histo.show_histo(continents, "vert", "Country Code", "Views by country")
+
+        if task[0] == '3':
+            t3 = HistoTasks(self.file)
+            histo = ShowHistogram()
+            browsers = t3.get_from_file("visitor_useragent", self.doc)
+            if task[1] == 'a':
+                histo.show_histo(browsers, "vert", "Browser", "Views by browser")
