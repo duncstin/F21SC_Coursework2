@@ -16,6 +16,21 @@ class UserInput:
         if self.gui_flag == False:
             self.validate_task_requirements()
 
+    def get_userid(self):
+        return self.user_id
+
+    def get_docid(self):
+        return self.doc_id
+
+    def get_task(self):
+        return self.task
+
+    def get_file(self):
+        return self.file
+
+    def get_guiflag(self):
+        return self.gui_flag
+
     def get_input(self):
         """Gets user input from commandline"""
         # first argument ignored as it is name of python file
@@ -26,23 +41,30 @@ class UserInput:
         except getopt.GetoptError:
             UserInput.usage(self)
 
-        if len(options) == 0 and len(remainder) == 0:
-            self.gui_flag = True
-        elif len(remainder) > 0:
+        if len(options) == 1 and len(remainder) == 0:  # if just a file is provided, gui will be launched
+            print("Only 1 argument provided")
+            for opt, arg in options:
+                if opt == '-f':
+                    print("Only 1 file provided")
+                    self.gui_flag = True
+        elif len(remainder) > 0:  # if user input contains input not recognised, display usage
             UserInput.usage(self)
         else:
-            for opt, arg in options:
-                if opt in ('-h', '--help'):
-                    UserInput.usage(self, True)
-                    sys.exit(0)
-                elif opt == '-u':
-                    self.user_id = arg
-                elif opt == '-d':
-                    self.doc_id = arg
-                elif opt == '-t':
-                    self.task = arg
-                elif opt == '-f':
-                    self.file = arg
+            self.process_input(options)
+
+    def process_input(self, options):
+        for opt, arg in options:
+            if opt in ('-h', '--help'):
+                UserInput.usage(self, True)
+                sys.exit(0)
+            elif opt == '-u':
+                self.user_id = arg
+            elif opt == '-d':
+                self.doc_id = arg
+            elif opt == '-t':
+                self.task = arg
+            elif opt == '-f':
+                self.file = arg
 
 
 
@@ -71,12 +93,11 @@ class UserInput:
         print("Task Id:" + self.task)
         if self.task in ('2a', '2b', '3a', '3b'):
             if len(self.doc_id) != 45:
-                print("Expected doc_id string of size 45 for task %s" % self.task)
-                # sys.exit(1)
+                print("Document Id is not 45 characters long")
         elif self.task in ('4d', '5'):
             print('Validation still required')
         else:
-            print('Invalid task specified')
-            UserInput.usage(self, True)
+            print('No Task Specified')
+            self.gui_flag = True
 
 

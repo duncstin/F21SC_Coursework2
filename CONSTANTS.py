@@ -1,6 +1,3 @@
-import pandas as pd
-import matplotlib.pyplot as plt
-
 cntry_to_cont = {
   'AF': 'AS',
   'AX': 'EU',
@@ -260,45 +257,6 @@ continents = {
   'NA': 0,
   'SA': 0,
   'OC': 0,
-  'AN': 0
+  'AN': 0,
+  'unknown': 0
 }
-
-
-class ShowHistogram:
-    def __init__(self, df):
-        self.df = df
-
-    def show_from_table(self, column_name, doc_id=None):
-        if doc_id is not None:
-            # print(self.df.loc[self.df[column_name]] == doc_id)
-            print("This would show table filtered by: " + column_name + doc_id)
-            tempDf =(self.df[['doc_id', column_name]])
-            temp2 = (tempDf[tempDf.doc_id == doc_id])
-            x = temp2[column_name].value_counts()
-            #print(x)
-            self.show_histo(x.to_dict(), orient="vert", label="counts", title="Views by " + column_name + " for " + doc_id[-4:] )
-        else:
-          x = self.df[column_name].value_counts()
-          print(x)
-          self.show_histo(x.to_dict(), orient="vert", label="counts", title="Views by " + column_name)
-
-
-    def show_histo(self, dict, orient="horiz", label="counts", title="title"):
-        """Take a dictionary of counts and show it as a histogram."""
-        if orient == "horiz":
-            bar_fun = plt.barh  # NB: this assigns a function to bar_fun!
-            bar_ticks = plt.yticks
-            bar_label = plt.xlabel
-        elif orient == "vert":
-            bar_fun = plt.bar
-            bar_ticks = plt.xticks
-            bar_label = plt.ylabel
-        else:
-            raise Exception("show_histo: Unknown orientation: %s ".format % orient)
-
-        n = len(dict)
-        bar_fun(range(n), list(dict.values()), align='center', alpha=0.4)
-        bar_ticks(range(n), list(dict.keys()))  # NB: uses a higher-order function
-        bar_label(label)
-        plt.title(title)
-        plt.show()
