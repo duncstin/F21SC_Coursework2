@@ -29,3 +29,6 @@ class TaskManager:
             browsers = t3.get_from_file("visitor_useragent", self.doc)
             if task[1] == 'a':
                 histo.show_histo(browsers, "vert", "Browser", "Views by browser")
+            else:
+                short_browsers = t3.get_short_browser(browsers)
+                histo.show_histo(short_browsers, "vert", "Browser", "Views by browser")
