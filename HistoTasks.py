@@ -56,3 +56,17 @@ class HistoTasks:
         print("unrecognised country codes:")
         print(unrecognised)
         return(c)
+
+    def get_short_browser(self, browsers):
+        short = {}
+        find = re.compile("^[^/]*")
+        for key, value in browsers.items():
+            #print(key)
+            #print(re.split("[ ]*/[ ]*", key)[1])
+            first = re.search(find, key).group(0)
+            if first in short:
+                short[first] += value
+            else:
+                short[first] = value
+        return short
+
