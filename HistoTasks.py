@@ -53,8 +53,9 @@ class HistoTasks:
             except:
                 c['unknown'] += countries[country]
                 unrecognised.append(country)
-        print("unrecognised country codes:")
-        print(unrecognised)
+        if unrecognised:
+            print("unrecognised country codes:")
+            print(unrecognised)
         return(c)
 
     def get_short_browser(self, browsers):

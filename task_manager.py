@@ -15,15 +15,24 @@ class TaskManager:
         self.user = user
 
     def run(self, task):
+        if task == '1':
+            t1 = HistoTasks(self.file)
+            documents = t1.get_from_file("subject_doc_id")
+            sorted_docs = lambda x: sorted(x.items(), key=lambda k: k[1], reverse=True)
+            print(sorted_docs(documents)[:10])
+
         if task[0] == '2':
             t2 = HistoTasks(self.file)
             histo = ShowHistogram()
             countries = t2.get_from_file("visitor_country", self.doc)
+            #131223153937-571db15b5caf3bb49c3ddc0591a759c7
+            #sorted_docs = lambda x: sorted(x.items(), key=lambda k: k[1], reverse=True)
+            #print(sorted_docs(countries)[:5])
             if task[1] == 'a':
                 histo.show_histo(countries, "vert", "Country Code", "Views by country")
             else:
                 continents = t2.get_continents(countries)
-                histo.show_histo(continents, "vert", "Country Code", "Views by country")
+                histo.show_histo(continents, "vert", "Continents", "Views by continent")
 
         if task[0] == '3':
             t3 = HistoTasks(self.file)
@@ -36,7 +45,8 @@ class TaskManager:
                 histo.show_histo(short_browsers, "vert", "Browser", "Views by browser")
 
         if task[0] == '4':
-            pass
+            also_likes = AlsoLikes(self.file)
+            also_likes.also_likes(self.doc, self.user)
 
         if task[0] == '5':
             also_likes_graph = AlsoLikes(self.file)

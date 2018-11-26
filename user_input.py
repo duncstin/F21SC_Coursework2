@@ -91,7 +91,7 @@ class UserInput:
 
     def validate_task_requirements(self):
         print("Task Id:" + self.task)
-        if self.task in ('2a', '2b', '3a', '3b'):
+        if self.task in ('1', '2a', '2b', '3a', '3b'):
             if len(self.doc_id) != 45:
                 print("Document Id is not 45 characters long")
         elif self.task in ('4d', '5'):
