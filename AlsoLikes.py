@@ -59,11 +59,43 @@ class AlsoLikes:
             verbose_readers.append(tup)
         return verbose_readers
 
+    def also_likes(self, doc_id, user_id='', sort=lambda x: sorted(x.items(), key=lambda k: len(k[1]), reverse=True)):
+        readers_and_docs = self.get_readers_and_documents(doc_id, user_id)
+        if user_id in readers_and_docs.keys():
+            del readers_and_docs[user_id]
+        docs_and_readers = self.invert_dict(readers_and_docs)
+        if doc_id in docs_and_readers.keys():
+            del docs_and_readers[doc_id]
+        #sorted_by_value = sorted(docs_and_readers.items(), key=lambda kv: len(kv[1]))
+        """freq = {}
+        for k, v in docs_and_readers.items():
+            freq[k] = len(v)"""
+        return sort(docs_and_readers)[:10]
+
+        print(docs_and_readers)
+        """for key, value in readers_and_docs.items():
+            for v in value:
+                if v != doc_id:
+                    if v in country_freq:
+                        country_freq[v] += 1
+                    else:
+                        country_freq[v] = 1
+        sorted = sort(country_freq)
+        return sorted[0:10]"""
 
 
-    def also_likes(self, doc_id, user_id=''):
-        self.get_readers_and_documents(doc_id, user_id)
-
+    def invert_dict(self, d):
+        inverse = {}
+        for key in d:
+            # Go through the list that is saved in the dict:
+            for item in d[key]:
+                # Check if in the inverted dict the key exists
+                if item not in inverse:
+                    # If not create a new list
+                    inverse[item] = [key]
+                else:
+                    inverse[item].append(key)
+        return inverse
 
     def get_readers_and_documents(self, doc_id, user_id):
         file_as_generator = self.get_file_generator(doc_id)

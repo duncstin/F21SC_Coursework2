@@ -61,13 +61,25 @@ class HistoTasks:
     def get_short_browser(self, browsers):
         short = {}
         find = re.compile("^[^/]*")
+        end = re.compile("([A-z]+)[^A-z]+$")
         for key, value in browsers.items():
             #print(key)
             #print(re.split("[ ]*/[ ]*", key)[1])
             first = re.search(find, key).group(0)
+            try:
+                last = re.search(end, key).group(1)
+                if last:
+                    first = first + "-" + last
+                else:
+                    first = first + "-unknown"
+            except(AttributeError):
+                first = first + "-unknown"
+
+
             if first in short:
                 short[first] += value
             else:
                 short[first] = value
         return short
+    # (A-z+)[^A-z]+$
 

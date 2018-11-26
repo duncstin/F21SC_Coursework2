@@ -18,8 +18,8 @@ class TaskManager:
         if task == '1':
             t1 = HistoTasks(self.file)
             documents = t1.get_from_file("subject_doc_id")
-            sorted_docs = lambda x: sorted(x.items(), key=lambda k: k[1], reverse=True)
-            print(sorted_docs(documents)[:10])
+            sort_descending = lambda x: sorted(x.items(), key=lambda k: k[1], reverse=True)
+            print(sort_descending(documents)[:10])
 
         if task[0] == '2':
             t2 = HistoTasks(self.file)
@@ -46,8 +46,13 @@ class TaskManager:
 
         if task[0] == '4':
             also_likes = AlsoLikes(self.file)
-            also_likes.also_likes(self.doc, self.user)
+            result = also_likes.also_likes(self.doc, self.user)
+            print('\n' + self.doc + '-->')
+            for r in result:
+                print("(" + str(len(r[1])) +": "+ r[0] + ")")
+
 
         if task[0] == '5':
+            sort_descending = lambda x: sorted(x.items(), key=lambda k: k[1], reverse=True)
             also_likes_graph = AlsoLikes(self.file)
             also_likes_graph.also_likes_graph(self.doc, self.user)
