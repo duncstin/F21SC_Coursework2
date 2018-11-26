@@ -111,8 +111,9 @@ class AlsoLikes:
     #also_likes('sample_3M_lines.json', '140109173556-a4b921ab7619621709b098aa9de4d736')
 
     def also_likes_graph(self, doc_id, user_id=''):
-        info = self.get_readers_and_documents(doc_id, user_id)
-        dot = Digraph(name="Also likes", node_attr={'shape': 'plaintext', 'fontsize': '16'})
+        info = self.also_likes(doc_id, user_id)
+        print(info)
+        dot = Digraph(name="Also likes", node_attr={'shape': 'plaintext', 'fontsize': '16'}, strict=True)
         # dot.format = 'ps'
         find = re.compile("_(.*?)_")
         try:
@@ -123,7 +124,21 @@ class AlsoLikes:
         dot.node('r', 'Readers')
         dot.node('d', 'Documents')
         dot.edge('r', 'd', label=scale)
-        for key, value in info.items():
+        dot.node(doc_id[-4:], doc_id[-4:], shape='circle', color='green', style='filled', rank='d')
+        if user_id != '':
+            dot.node(user_id[-4:], user_id[-4:], shape='box', color='green', style='filled', rank='r')
+            dot.edge(user_id[-4:], doc_id[-4:])
+        for tup in info:
+            dot.node(tup[0][-4:], tup[0][-4:], shape='circle', rank='d')
+            for reader in tup[1]:
+                dot.node(reader[-4:], reader[-4:], shape='box', rank='r')
+                dot.edge(reader[-4:], tup[0][-4:])
+                dot.edge(reader[-4:], doc_id[-4:])
+
+        print(dot.source)
+        dot.render('test-output.gv', view=True)
+
+        """for key, value in info.items():
             distinct = set(value)
             if key == user_id:
                 dot.node(key[-4:], key[-4:], shape='box', color='green', style='filled', rank='r')
@@ -140,5 +155,5 @@ class AlsoLikes:
                         dot.node(d[-4:], d[-4:], shape='circle', rank='d')
                     dot.edge(key[-4:], d[-4:])
         print(dot.source)
-        dot.render('test-output.gv', view=True)
+        dot.render('test-output.gv', view=True)"""
 
