@@ -12,7 +12,7 @@ def main():
         print("UserInput:")
         print(user_input.user_id, user_input.doc_id, user_input.task, user_input.file)
 
-        manager = TaskManager(user_input)
+        manager = TaskManager(user_input.get_file(), user_input.get_docid(), user_input.get_userid())
         task = user_input.task
         manager.run(task)
 

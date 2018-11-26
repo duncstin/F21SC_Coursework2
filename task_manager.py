@@ -9,10 +9,10 @@ class TaskManager:
     doc = ''
     user = ''
 
-    def __init__(self, u_input):
-        self.file = u_input.get_file()
-        self.doc = u_input.get_docid()
-        self.user = u_input.get_userid()
+    def __init__(self, file, doc, user):
+        self.file = file
+        self.doc = doc
+        self.user = user
 
     def run(self, task):
         if task[0] == '2':
