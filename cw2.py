@@ -1,11 +1,13 @@
 from user_input import UserInput
 from task_manager import TaskManager
+from Gui import Gui
 
 
 def main():
     user_input = UserInput()
     if user_input.gui_flag:
-        print('This would run a gui')
+        g = Gui()
+        g.run()
     else:
         print("UserInput:")
         print(user_input.user_id, user_input.doc_id, user_input.task, user_input.file)

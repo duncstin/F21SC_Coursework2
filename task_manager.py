@@ -1,5 +1,7 @@
 from HistoTasks import HistoTasks
 from ShowHistogram import ShowHistogram
+from AlsoLikes import AlsoLikes
+
 
 class TaskManager:
 
@@ -32,3 +34,10 @@ class TaskManager:
             else:
                 short_browsers = t3.get_short_browser(browsers)
                 histo.show_histo(short_browsers, "vert", "Browser", "Views by browser")
+
+        if task[0] == '4':
+            pass
+
+        if task[0] == '5':
+            also_likes_graph = AlsoLikes(self.file)
+            also_likes_graph.also_likes_graph(self.doc, self.user)
