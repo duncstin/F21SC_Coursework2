@@ -12,71 +12,76 @@
     <session id="-2095381061">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.8" value="3" />
+          <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="json" value="5" />
-          <entry key="py" value="13" />
+          <entry key="json" value="9" />
+          <entry key="py" value="27" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="5" />
-          <entry key="Python" value="13" />
+          <entry key="JSON" value="9" />
+          <entry key="Python" value="27" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="23" />
-          <entry key="py" value="4287" />
+          <entry key="dummy" value="46" />
+          <entry key="py" value="17785" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="23" />
-          <entry key="Python" value="4287" />
+          <entry key="PLAIN_TEXT" value="46" />
+          <entry key="Python" value="17785" />
         </counts>
       </usages-collector>
     </session>
     <session id="1070945866">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="json" value="6" />
-          <entry key="py" value="16" />
+          <entry key="py" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="6" />
-          <entry key="Python" value="16" />
+          <entry key="Python" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="82" />
-          <entry key="py" value="7145" />
+          <entry key="dummy" value="90" />
+          <entry key="py" value="10536" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="82" />
-          <entry key="Python" value="7145" />
+          <entry key="PLAIN_TEXT" value="90" />
+          <entry key="Python" value="10536" />
         </counts>
       </usages-collector>
     </session>
@@ -84,41 +89,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/input.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" selection-start-line="5" selection-end-line="266" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#82#3570#0" />
-                <element signature="e#3586#3665#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CONSTANTS.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="262" selection-start-line="262" selection-end-line="262" />
-              <folding>
-                <element signature="e#16#3504#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sample_100k_lines.json">
-          <provider selected="true" editor-type-id="LargeFileEditor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cw2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="102">
+              <caret line="6" column="87" lean-forward="true" selection-start-line="6" selection-start-column="87" selection-end-line="6" selection-end-column="87" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -129,40 +103,60 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="30" column="81" lean-forward="true" selection-start-line="30" selection-start-column="81" selection-end-line="30" selection-end-column="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ShowHistogram.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user_input.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="180">
+              <caret line="87" column="47" selection-start-line="87" selection-start-column="47" selection-end-line="87" selection-end-column="47" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#0#33#0" expanded="true" />
+                <marker date="1543325295867" expanded="true" signature="394:399" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HistoTasks.py">
+        <entry file="file://$PROJECT_DIR$/Gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="61" column="34" lean-forward="true" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="34" />
+            <state relative-caret-position="68">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+                <marker date="1543324947279" expanded="true" signature="261:755" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/processfile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
+                <marker date="1543325208458" expanded="true" signature="85:142" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sample_400k_lines.json">
+          <provider selected="true" editor-type-id="LargeFileEditor">
+            <state relative-caret-position="159">
+              <caret line="89" column="337" selection-start-line="89" selection-start-column="319" selection-end-line="89" selection-end-column="337" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AlsoLikes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+              <folding>
+                <marker date="1543325382759" expanded="true" signature="154:269" ph="..." />
+                <marker date="1543325382759" expanded="true" signature="1755:1760" ph="..." />
+                <marker date="1543325382759" expanded="true" signature="2506:2937" ph="..." />
               </folding>
             </state>
           </provider>
@@ -187,6 +181,20 @@
       <find>valida</find>
       <find>&quot;visitor_country&quot;:&quot;A1&quot;</find>
       <find>b</find>
+      <find>4390</find>
+      <find>130601015527-c1e2993d8290975e7ef350f078134390</find>
+      <find>g</find>
+      <find>count_fre</find>
+      <find>user_id</find>
+      <find>get_from_</find>
+      <find>get_from_f</find>
+      <find>validate</find>
+      <find>get_from</find>
+      <find>131223153937-571db15b5caf3bb49c3ddc0591a759c7</find>
+      <find>d8e05606f2786d74</find>
+      <find>e00ce31478fe858d</find>
+      <find>get_file</find>
+      <find>fetch</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -201,7 +209,6 @@
         <option value="$PROJECT_DIR$/test2.py" />
         <option value="$PROJECT_DIR$/whatisgoingon.py" />
         <option value="$PROJECT_DIR$/CW2/what.py" />
-        <option value="$PROJECT_DIR$/CW2/test.py" />
         <option value="$PROJECT_DIR$/CW2/input.py" />
         <option value="$PROJECT_DIR$/__main__.py" />
         <option value="$PROJECT_DIR$/userinput.py" />
@@ -211,18 +218,24 @@
         <option value="$PROJECT_DIR$/show_histogram.py" />
         <option value="$PROJECT_DIR$/histo_tasks.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/cw2.py" />
-        <option value="$PROJECT_DIR$/ShowHistogram.py" />
+        <option value="$PROJECT_DIR$/CW2/test.py" />
+        <option value="$PROJECT_DIR$/process_file.py" />
         <option value="$PROJECT_DIR$/user_input.py" />
-        <option value="$PROJECT_DIR$/CONSTANTS.py" />
         <option value="$PROJECT_DIR$/HistoTasks.py" />
+        <option value="$PROJECT_DIR$/CONSTANTS.py" />
+        <option value="$PROJECT_DIR$/ShowHistogram.py" />
+        <option value="$PROJECT_DIR$/ALGraph.py" />
+        <option value="$PROJECT_DIR$/cw2.py" />
+        <option value="$PROJECT_DIR$/Gui.py" />
+        <option value="$PROJECT_DIR$/processfile.py" />
         <option value="$PROJECT_DIR$/task_manager.py" />
+        <option value="$PROJECT_DIR$/AlsoLikes.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="217" />
-    <option name="y" value="-29" />
+    <option name="x" value="367" />
+    <option name="y" value="-30" />
     <option name="width" value="975" />
     <option name="height" value="1047" />
   </component>
@@ -271,7 +284,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.Gui">
+    <configuration name="Gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="F21SC_Coursework2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="input (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="F21SC_Coursework2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -293,7 +327,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="input" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="F21SC_Coursework2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -301,11 +335,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CW2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CW2/input.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\dunca\Documents\GitHub\F21SC_Coursework2\AlsoLikes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -357,17 +391,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.input" />
       <item itemvalue="Python.whatisgoingon" />
       <item itemvalue="Python.input (1)" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.test (1)" />
+      <item itemvalue="Python.Gui" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Gui" />
+        <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.input (1)" />
         <item itemvalue="Python.whatisgoingon" />
-        <item itemvalue="Python.input" />
       </list>
     </recent_temporary>
   </component>
@@ -386,14 +422,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13275039" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15421304" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3264642" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33274022" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.28291816" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27224198" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.16192171" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -406,13 +443,13 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.53418803" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15421304" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.86513996" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.28291816" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27224198" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.16192171" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -437,7 +474,6 @@
     <entry file="file://$PROJECT_DIR$/CW2/__init__.py" />
     <entry file="file://$PROJECT_DIR$/CW2/what.py" />
     <entry file="file://$PROJECT_DIR$/CW2/input.py" />
-    <entry file="file://$PROJECT_DIR$/CW2/test.py" />
     <entry file="file://$PROJECT_DIR$/test2.py" />
     <entry file="file://$PROJECT_DIR$/__main__.py" />
     <entry file="file://$PROJECT_DIR$/issuu_sample.json" />
@@ -450,10 +486,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/file_input.py" />
     <entry file="file://$PROJECT_DIR$/sample_3m_lines.json" />
+    <entry file="file://$PROJECT_DIR$/sample_100k_lines.json">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="119">
+          <caret line="7" column="514" selection-start-line="7" selection-start-column="498" selection-end-line="7" selection-end-column="514" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CW2/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-435">
+          <caret line="65" column="29" lean-forward="true" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HistoTasks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="51" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="13" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/input.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" selection-start-line="5" selection-end-line="266" selection-end-column="1" />
+        <state>
+          <caret line="273" column="20" lean-forward="true" selection-start-line="273" selection-start-column="20" selection-end-line="273" selection-end-column="20" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#82#3570#0" />
@@ -462,59 +525,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user_input.py">
+    <entry file="file://$PROJECT_DIR$/CONSTANTS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ShowHistogram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task_manager.py">
+    <entry file="file://$PROJECT_DIR$/sample_400k_lines.json">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="159">
+          <caret line="89" column="337" selection-start-line="89" selection-start-column="319" selection-end-line="89" selection-end-column="337" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ALGraph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="30" column="81" lean-forward="true" selection-start-line="30" selection-start-column="81" selection-end-line="30" selection-end-column="81" />
+        <state relative-caret-position="612">
+          <caret line="36" column="54" lean-forward="true" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1543324402000" expanded="true" signature="166:224" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1543325208458" expanded="true" signature="85:142" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cw2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="102">
+          <caret line="6" column="87" lean-forward="true" selection-start-line="6" selection-start-column="87" selection-end-line="6" selection-end-column="87" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CONSTANTS.py">
+    <entry file="file://$PROJECT_DIR$/task_manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="262" selection-start-line="262" selection-end-line="262" />
+        <state relative-caret-position="180">
+          <caret line="87" column="47" selection-start-line="87" selection-start-column="47" selection-end-line="87" selection-end-column="47" />
           <folding>
-            <element signature="e#16#3504#0" />
+            <element signature="e#0#33#0" expanded="true" />
+            <marker date="1543325295867" expanded="true" signature="394:399" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample_100k_lines.json">
-      <provider selected="true" editor-type-id="LargeFileEditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HistoTasks.py">
+    <entry file="file://$PROJECT_DIR$/AlsoLikes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="61" column="34" lean-forward="true" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="34" />
+        <state relative-caret-position="612">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1543325382759" expanded="true" signature="154:269" ph="..." />
+            <marker date="1543325382759" expanded="true" signature="1755:1760" ph="..." />
+            <marker date="1543325382759" expanded="true" signature="2506:2937" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1543324947279" expanded="true" signature="261:755" ph="..." />
           </folding>
         </state>
       </provider>

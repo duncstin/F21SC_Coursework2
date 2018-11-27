@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 
 
 class ShowHistogram:
-    #def __init__(self):
-
+    """Code taken from sample material provided for the Industrial Programming course at Heriot Watt Universitry:
+    http://www.macs.hw.ac.uk/~hwloidl/Courses/F21SC/Samples/simple_histo.py"""
 
     def show_histo(self, dict, orient="horiz", label="counts", title="title"):
         """Take a dictionary of counts and show it as a histogram."""
