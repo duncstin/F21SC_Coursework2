@@ -44,7 +44,6 @@ class UserInput:
         if len(options) == 1 and len(remainder) == 0:  # if just a file is provided, gui will be launched
             for opt, arg in options:
                 if opt == '-f':
-                    print("Only file input has been provided")
                     self.gui_flag = True
         elif len(remainder) > 0:  # if user input contains input not recognised, display usage
             UserInput.usage(self)
@@ -93,7 +92,6 @@ class UserInput:
 
     def validate_task_requirements(self):
         """Basic validation of input, to ensure it is the correct format, preventing pointless iterations over file"""
-        print("Task Id:" + self.task)
         if self.task in ('1', '2a', '2b', '3a', '3b'):
             if self.doc_id != '' and len(self.doc_id) != 45:  # if a document is provided, must be of correct length
                 print("\nProvided doc_Id should be 45 characters long")
