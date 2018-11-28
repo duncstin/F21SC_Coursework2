@@ -15,6 +15,7 @@ class AlsoLikes1(ProcessFile):
         read_events = self.get_file_generator()  # generator returning only read events
         docs_with_readers = self.get_docs_with_readers(read_events, doc_id, user_id)
         also_likes_dict = self.remove_input_doc(docs_with_readers, doc_id) # remove any documents read by the input user
+        also_likes_dict = self.remove_input_user(also_likes_dict, user_id)
         return sort(also_likes_dict)[:10]  #return top 10 sorted documents
 
     def get_docs_with_readers(self, lines, input_doc, input_user):
@@ -43,7 +44,7 @@ class AlsoLikes1(ProcessFile):
         filtered = {}  # construct new dictionary to avoid deleting items while iterating
         for key, values in dictionary.items():
             for value in values:  # for each item in the list of values
-                if value in list_of_targets and (value != input_user):  # keep value by adding to filtered dict
+                if value in list_of_targets:  # keep value by adding to filtered dict
                     if key not in filtered:
                         filtered[key] = [value]  # add key, add value as list of 1
                     else:
@@ -51,9 +52,20 @@ class AlsoLikes1(ProcessFile):
                             filtered[key].append(value)  # add value to list for key
         return filtered
 
-    def remove_input_doc(self, dictionary, input_doc):
+    def remove_input_doc(self, dictionary, input_key):
+        """Removes a key from a dictionary if it is present"""
         for k in list(dictionary.keys()):  # can't delete from dictionary you are iterating over
-            if k == input_doc:
+            if k == input_key:
                 del dictionary[k]
         return dictionary
 
+    def remove_input_user(self, dictionary, input_user):
+        """Remove key from dictionary if value present"""
+        target = None
+        for key, values in dictionary.items():
+            for v in values:
+                if v == input_user:
+                    target = key
+        if target:
+            del dictionary[target]
+        return dictionary

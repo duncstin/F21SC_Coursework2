@@ -10,7 +10,7 @@ class ShowDigraph:
     def also_likes_graph(self, also_likes_list, doc_id, user_id=''):
         if also_likes_list:
             dot = Digraph(name="Also likes", node_attr={'shape': 'plaintext', 'fontsize': '16'}, strict=True)
-            dot.format = 'ps'
+            # dot.format = 'ps'
             find = re.compile("_(.*?)_")
             try:  # attempt to get size of dataset from file name
                 first = re.search(find, self.file).group(1)

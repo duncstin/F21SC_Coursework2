@@ -19,6 +19,7 @@ class ProcessFile:
             for line in f:
                 if re.search('"event_type":"read"', line) and re.search(doc_string, line):
                     yield line
+        f.close()
 
 
     def process_line(self, string_line, target):

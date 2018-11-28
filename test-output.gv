@@ -2,20 +2,16 @@ strict digraph "Also likes" {
 	node [fontsize=16 shape=plaintext]
 	r [label=Readers]
 	d [label=Documents]
-	r -> d [label="Size: 100k"]
-	"72b5" [label="72b5" color=green rank=d shape=circle style=filled]
-	beef [label=beef color=green rank=r shape=box style=filled]
-	beef -> "72b5"
-	"14cf" [label="14cf" rank=d shape=circle]
-	"1a0c" [label="1a0c" rank=r shape=box]
-	"1a0c" -> "14cf"
-	"1a0c" -> "72b5"
-	b92f [label=b92f rank=d shape=circle]
-	"1a0c" [label="1a0c" rank=r shape=box]
-	"1a0c" -> b92f
-	"1a0c" -> "72b5"
-	dd59 [label=dd59 rank=d shape=circle]
-	"1a0c" [label="1a0c" rank=r shape=box]
-	"1a0c" -> dd59
-	"1a0c" -> "72b5"
+	r -> d [label="Size: 3M"]
+	"3ca9" [label="3ca9" color=green rank=d shape=circle style=filled]
+	"0a46" [label="0a46" color=green rank=r shape=box style=filled]
+	"0a46" -> "3ca9"
+	0265 [label=0265 rank=d shape=circle]
+	"7a15" [label="7a15" rank=r shape=box]
+	"7a15" -> 0265
+	"7a15" -> "3ca9"
+	d816 [label=d816 rank=d shape=circle]
+	"7a15" [label="7a15" rank=r shape=box]
+	"7a15" -> d816
+	"7a15" -> "3ca9"
 }
