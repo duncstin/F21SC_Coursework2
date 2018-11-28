@@ -105,6 +105,7 @@ class TaskManager:
         also_likes = AlsoLikes1(self.file)
         graph = ShowDigraph(self.file)
         result = also_likes.also_likes(self.doc, self.user)
+        self.user = also_likes.user
         graph.also_likes_graph(result, self.doc, self.user)
 
 

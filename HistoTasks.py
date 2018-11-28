@@ -60,5 +60,11 @@ class HistoTasks(ProcessFile):
             else:
                 short[first] = value
         return short
+        
+    def get_from_file(self, target_field, doc_id=''):
+        """Returns a frequency count for a given field. Filters for given document
+        if provided"""
+        relevant_lines = self.get_file_generator(doc_id)
+        return self.count_frequency(target_field, relevant_lines)    
 
 

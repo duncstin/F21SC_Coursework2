@@ -4,6 +4,7 @@ from processfile import ProcessFile
 class AlsoLikes1(ProcessFile):
 
     file = ''
+    user = ''
 
     def __init__(self, filepath):
         self.file = filepath
@@ -29,6 +30,12 @@ class AlsoLikes1(ProcessFile):
                 documents[doc] = [reader]
             else:
                 documents[doc].append(reader)
+        if input_user != '' and input_user not in readers:  # if input reader provided, ensure that it is valid
+            input_user = ''
+            print('Unrecognised input reader')
+            self.user = input_user
+        else:
+            self.user = input_user
         return self.filter_dict(documents, readers, input_user)  # remove any documents that don't have readers who've read the input document
 
     def filter_dict(self, dictionary, list_of_targets, input_user=''):
