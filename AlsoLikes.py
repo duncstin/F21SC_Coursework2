@@ -14,7 +14,7 @@ class AlsoLikes1(ProcessFile):
         """Returns list of tuples, containing document id and list of all users who have read it"""
         read_events = self.get_file_generator()  # generator returning only read events
         docs_with_readers = self.get_docs_with_readers(read_events, doc_id, user_id)
-        also_likes_dict = self.remove_input_doc(docs_with_readers, doc_id) # remove any documents read by the input user
+        also_likes_dict = self.remove_input_doc(docs_with_readers, doc_id)
         also_likes_dict = self.remove_input_user(also_likes_dict, user_id)
         return sort(also_likes_dict)[:10]  #return top 10 sorted documents
 
