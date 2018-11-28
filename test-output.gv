@@ -2,29 +2,22 @@ strict digraph "Also likes" {
 	node [fontsize=16 shape=plaintext]
 	r [label=Readers]
 	d [label=Documents]
-	r -> d [label="Size: 3M"]
-	dd50 [label=dd50 color=green rank=d shape=circle style=filled]
-	f33a [label=f33a rank=d shape=circle]
-	ca70 [label=ca70 rank=r shape=box]
-	ca70 -> f33a
-	ca70 -> dd50
-	"90ea" [label="90ea" rank=r shape=box]
-	"90ea" -> f33a
-	"90ea" -> dd50
-	"90ea" [label="90ea" rank=r shape=box]
-	"90ea" -> f33a
-	"90ea" -> dd50
-	"90ea" [label="90ea" rank=r shape=box]
-	"90ea" -> f33a
-	"90ea" -> dd50
-	"90ea" [label="90ea" rank=r shape=box]
-	"90ea" -> f33a
-	"90ea" -> dd50
-	efbe [label=efbe rank=d shape=circle]
-	5612 [label=5612 rank=r shape=box]
-	5612 -> efbe
-	5612 -> dd50
-	"02ce" [label="02ce" rank=r shape=box]
-	"02ce" -> efbe
-	"02ce" -> dd50
+	r -> d [label="Size: 100k"]
+	"72b5" [label="72b5" color=green rank=d shape=circle style=filled]
+	"14cf" [label="14cf" rank=d shape=circle]
+	"1a0c" [label="1a0c" rank=r shape=box]
+	"1a0c" -> "14cf"
+	"1a0c" -> "72b5"
+	b92f [label=b92f rank=d shape=circle]
+	"1a0c" [label="1a0c" rank=r shape=box]
+	"1a0c" -> b92f
+	"1a0c" -> "72b5"
+	dd59 [label=dd59 rank=d shape=circle]
+	"1a0c" [label="1a0c" rank=r shape=box]
+	"1a0c" -> dd59
+	"1a0c" -> "72b5"
+	adbe [label=adbe rank=d shape=circle]
+	beef [label=beef rank=r shape=box]
+	beef -> adbe
+	beef -> "72b5"
 }
