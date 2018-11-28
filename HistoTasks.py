@@ -1,5 +1,5 @@
 import re
-from CONSTANTS import cntry_to_cont as continent_converter, continents
+from CONSTANTS import cntry_to_cont as continent_converter
 from processfile import ProcessFile
 
 
@@ -26,18 +26,24 @@ class HistoTasks(ProcessFile):
 
     def get_continents(self, countries):
         """Converts country frequency count to continent frequency count"""
-        c = continents
+        continents = {}
         unrecognised = []
         for country in countries:
             try:
-                c[continent_converter[country]] += countries[country]
+                if continent_converter[country] not in continents:
+                    continents[continent_converter[country]] = countries[country]
+                else:
+                    continents[continent_converter[country]] += countries[country]
             except:
-                c['unknown'] += countries[country]
+                if 'unknown' not in continents:
+                    continents['unknown'] = countries[country]
+                else:
+                    continents['unknown'] += countries[country]
                 unrecognised.append(country)
         if unrecognised:
             print("unrecognised country codes:")
             print(unrecognised)
-        return(c)
+        return(continents)
 
     def get_short_browser(self, browsers):
         """Uses regex to extract key identifiers from verbose browser strings"""

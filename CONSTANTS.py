@@ -251,16 +251,3 @@ cntry_to_cont = {
     'ZM': 'AF',
     'ZW': 'AF'
 }
-
-# Dict containing recognised continents, with counts set to 0
-continents = {
-    'AF': 0,
-    'AS': 0,
-    'EU': 0,
-    'NA': 0,
-    'SA': 0,
-    'OC': 0,
-    'AN': 0,
-    'unknown': 0
-}
-
