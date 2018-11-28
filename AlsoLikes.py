@@ -1,72 +1,52 @@
-import re
 from processfile import ProcessFile
 
 
-class AlsoLikes(ProcessFile):
-    """Class containing methods to implement an "also like" functionality"""
+class AlsoLikes1(ProcessFile):
+
+    file = ''
 
     def __init__(self, filepath):
         self.file = filepath
-        super(AlsoLikes, self).__init__(self.file)
-
-    def all_reader_docs(self, readers):
-        """Returns dict, where keys are users and values are lists of docs they have read"""
-        read_events = self.get_file_generator()
-        reader_strings = self.convert_readers(readers)  # tuples pairing reader id with verbose version used for regex
-        # ensures no "visitor_referrer" fields are mistakenly matched.
-        reader_docs = {}
-        for reads in read_events:
-            for tup in reader_strings:
-                if re.search(tup[1], reads):  # if the reader is in the yielded line
-                    doc = self.process_line(reads, "subject_doc_id") # extract the document they have read
-                    if tup[0] in reader_docs:  # if the reader is in the dictionary
-                        reader_docs[tup[0]].append(doc)  # append the document they have read
-                    else:  # reader not in dictionary
-                        reader_docs[tup[0]] = []  # add reader
-                        reader_docs[tup[0]].append(doc)  # append document they have read
-        return reader_docs
-
-
-    def convert_readers(self, readers):
-        """returns list of tuples containing user ids and verbose strings for searching in files"""
-        verbose_readers = []
-        for reader in readers:
-            v_reader = '"visitor_uuid":"' + reader + '"'  # construct verbose string used for regex.
-            tup = (reader, v_reader)
-            verbose_readers.append(tup)
-        return verbose_readers
+        super(AlsoLikes1, self).__init__(self.file)
 
     def also_likes(self, doc_id, user_id='', sort=lambda x: sorted(x.items(), key=lambda k: len(k[1]), reverse=True)):
         """Returns list of tuples, containing document id and list of all users who have read it"""
-        readers_and_docs = self.get_readers_and_documents(doc_id)
-        if user_id in readers_and_docs.keys():  # remove user ID, so not recommending documents they have already read
-            del readers_and_docs[user_id]
-        docs_and_readers = self.invert_dict(readers_and_docs)
-        if doc_id in docs_and_readers.keys(): # remove document ID, so not recommending the input document as an "also like" one
-            del docs_and_readers[doc_id]
-        return sort(docs_and_readers)[:10]  # only returns top 10 values
+        read_events = self.get_file_generator()  # generator returning only read events
+        docs_with_readers = self.get_docs_with_readers(read_events, doc_id, user_id)
+        also_likes_dict = self.remove_input_doc(docs_with_readers, doc_id) # remove any documents read by the input user
+        return sort(also_likes_dict)[:10]  #return top 10 sorted documents
 
-    def invert_dict(self, dictionary):
-        """Inverts dict of lists to a new dict, where elements in lists are keys, and values are keys from old dict"""
-        inverse = {}
-        for key in dictionary:
-            for item in dictionary[key]:
-                if item not in inverse:
-                    inverse[item] = [key]
-                else:
-                    inverse[item].append(key)
-        return inverse
-
-    def get_readers_and_documents(self, doc_id):
-        """for a given input document, finds all readers, then all documents read by them.
-        Returns dict where documents are keys and readers are in lists of values"""
-        file_as_generator = self.get_file_generator(doc_id)  # all read events for given document
+    def get_docs_with_readers(self, lines, input_doc, input_user):
+        """Gets list of readers who have read input document and dict of all documents containing list of readers"""
         readers = []
-        for line in file_as_generator:  # iterate over those read events, collecting all readers for the document
-            reader = self.process_line(line, "visitor_uuid")
-            if reader:
-                readers.append(reader)
-        docs_for_readers = self.all_reader_docs(readers) # get all documents read by identified readers
-        return docs_for_readers
+        documents = {}
+        for reads in lines:
+            reader = self.process_line(reads, "visitor_uuid")
+            doc = self.process_line(reads, "subject_doc_id")
+            if reader and (input_doc == doc):
+                readers.append(reader)  # add readers to list who have read input document
+            if doc not in documents:  # create dictionary of documents with list of all readers
+                documents[doc] = [reader]
+            else:
+                documents[doc].append(reader)
+        return self.filter_dict(documents, readers, input_user)  # remove any documents that don't have readers who've read the input document
 
+    def filter_dict(self, dictionary, list_of_targets, input_user=''):
+        """Filter dictionary of lists to only include keys where the paired list of values is in a target list"""
+        filtered = {}  # construct new dictionary to avoid deleting items while iterating
+        for key, values in dictionary.items():
+            for value in values:  # for each item in the list of values
+                if value in list_of_targets and (value != input_user):  # keep value by adding to filtered dict
+                    if key not in filtered:
+                        filtered[key] = [value]  # add key, add value as list of 1
+                    else:
+                        if value not in filtered[key]:
+                            filtered[key].append(value)  # add value to list for key
+        return filtered
+
+    def remove_input_doc(self, dictionary, input_doc):
+        for k in list(dictionary.keys()):  # can't delete from dictionary you are iterating over
+            if k == input_doc:
+                del dictionary[k]
+        return dictionary
 
