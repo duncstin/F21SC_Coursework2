@@ -36,6 +36,9 @@ class ShowDigraph:
                     dot.edge(reader[-4:], tup[0][-4:])
                     dot.edge(reader[-4:], doc_id[-4:])
             # print(dot.source)
-            dot.render('test-output.gv', view=True)
+            try:
+                dot.render('test-output.gv', view=True)
+            except:
+                print("Close or rename output file")
         else:
             print('There are no "also likes" documents in the current data')

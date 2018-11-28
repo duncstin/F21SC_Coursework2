@@ -36,7 +36,6 @@ class Gui:
         """Loops over buttons, creatinga button for each"""
         for button in self.buttons:
             button = Button(root, text=button, width=5, command=lambda b=button: self.start_task_manager(b))
-            # https://stackoverflow.com/questions/1539787/determine-which-button-was-pressed-in-tkinter
             button.pack(side=LEFT, padx=5, pady=5)
 
     def run(self):
@@ -46,11 +45,8 @@ class Gui:
     def start_task_manager(self, task):
         """Takes information from GUI, instantiates a task manager, and runs appropriate task"""
         file = self.text_input[0].get()
-        print("file " + file)
         user = self.text_input[1].get()
-        print("user " + user)
         doc = self.text_input[2].get()
-        print("doc " + doc)
         manager = TaskManager(file, doc, user)
         manager.run(task)
 

@@ -1,6 +1,6 @@
 from HistoTasks import HistoTasks
 from ShowHistogram import ShowHistogram
-from AlsoLikes import AlsoLikes
+from AlsoLikes import AlsoLikes1
 from ALGraph import ShowDigraph
 from decorator import timer
 
@@ -35,7 +35,7 @@ class TaskManager:
                 else:
                     self.task3(True)
 
-            if task == '4d':
+            if task[0] == '4':
                 if task[1] == 'd':
                     self.task4()
                 else:
@@ -58,7 +58,7 @@ class TaskManager:
         """Sorts dictionary by value, returning dict as list of tuples, highest first."""
         return sorted(x.items(), key=lambda k: k[1], reverse=True)
 
-    @timer
+
     def task2(self, extend=False):
         """Shows countries by default. If extend == True, will extend the task to include method for processing
         countries to continents"""
@@ -70,7 +70,7 @@ class TaskManager:
             histo.show_histo(continents, "vert", "Continents", "Views by continent")
         else:
             histo.show_histo(countries, "vert", "Country Code", "Views by country")
-    @timer
+
     def task3(self, extend=False):
         """Shows views by browser. Will extend to task 3b if flag is true, calling method to process the verbose browser
         strings to just the key identifiers"""
@@ -86,7 +86,7 @@ class TaskManager:
     def task4(self, show_counts=True):
         """Gets also like list of top 10 readers. By default, shows doc ID & count of readers.
         If show_contents is false, will display full reader strings. This is mainly used for debugging or testing"""
-        also_likes = AlsoLikes(self.file)
+        also_likes = AlsoLikes1(self.file)
         result = also_likes.also_likes(self.doc)
         if result:
             print('\n' + self.doc + '-->')
@@ -102,7 +102,7 @@ class TaskManager:
     @timer
     def task5(self):
         """Displays 'also likes' graph for top 10 documents (excluding input doc)"""
-        also_likes = AlsoLikes(self.file)
+        also_likes = AlsoLikes1(self.file)
         graph = ShowDigraph(self.file)
         result = also_likes.also_likes(self.doc, self.user)
         graph.also_likes_graph(result, self.doc, self.user)

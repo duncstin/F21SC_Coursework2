@@ -23,8 +23,9 @@ class ProcessFile:
 
     def process_line(self, string_line, target):
         """Converts a string to json, returns target value from json"""
-        json_line = json.loads(string_line)
-        return json_line[target]
+        regex = '\"' + str(target) + '\":\"(.*?)\"'
+        re.compile(regex)
+        return re.search(regex, string_line).groups(0)[0]
 
     def get_from_file(self, target_field, doc_id=''):
         """Users other methods in class to provide a frequency count for a given field. Filters for given document
