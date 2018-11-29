@@ -62,10 +62,10 @@ class AlsoLikes1(ProcessFile):
     def remove_input_user(self, dictionary, input_user):
         """Remove key from dictionary if value present"""
         target = None
-        for key, values in dictionary.items():
+        for key, values in list(dictionary.items()):  # can't delete from structure you iterate over
             for v in values:
                 if v == input_user:
-                    target = key
+                    del dictionary[key]
         if target:
             del dictionary[target]
         return dictionary
