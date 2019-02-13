@@ -87,13 +87,14 @@ class TaskManager:
         """Gets also like list of top 10 readers. By default, shows doc ID & count of readers.
         If show_contents is false, will display full reader strings. This is mainly used for debugging or testing"""
         also_likes = AlsoLikes1(self.file)
-        result = also_likes.also_likes(self.doc)
+        result = also_likes.also_likes(self.doc, self.user)
+        print(result)
         if result:
             print('\n' + self.doc + '-->')
             if show_counts: # show doc id with counts for readers
                 for r in result:
                     print("(" + str(len(r[1])) + ": " + r[0] + ")")
-            else: # show doc id and ALL associated reader ids
+            else:  # show doc id and ALL associated reader ids
                 for r in result:
                     print(r)
         else:  # if no readers, or readers haven't read any other documents
@@ -105,6 +106,7 @@ class TaskManager:
         also_likes = AlsoLikes1(self.file)
         graph = ShowDigraph(self.file)
         result = also_likes.also_likes(self.doc, self.user)
+        print(result)
         self.user = also_likes.user
         graph.also_likes_graph(result, self.doc, self.user)
 
